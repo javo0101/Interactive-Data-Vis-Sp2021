@@ -1,0 +1,46 @@
+wehile application not widespread in public research, there is merit in finding more interpretable results. However we ran a more traditional method and we found identical findings. In light of the fact that this approach has been used more traditionally public health to avoid the new approach being a distraction for readers. 
+
+Hi Tomo, I hope you are doing well.
+
+A group of students have been discussing and met today wondering about the future of the EP Program. While we know that there is a plan for the new guard to replace the old guard, we wanted to understand this plan a bit better, and what the current status is, so we would like to prioritize this on Friday's agenda. There were a few important questions:
+
+- We found out that faculty lines for the EP faculty are being closed and not replaced. Is this true? What can we do about this?
+- We also found out that we lost the HEGIS status, and that this might be related to why there are no intentions to replace faculty. How can we recover this status?
+- What can we do as students (and alumni) to leverage and help rescue the EP Program?
+
+On behalf of EP students, thank you,
+
+Best,
+
+Javier
+---
+
+
+These proxy measures representing social and physical aspects of the environment would be associated with park usage. Secondarily, test these hypotheses at both the individual and community levels.
+
+The proportion of Latinx/Black is similar to the share of the populations at the community level. 
+
+
+About sample size estimation: maybe add more about recruitment, then just say sample size estimation for the larger parcs study is elsewhere.
+
+public housing and the s
+
+
+Run a correlation Matrix of key variables, I would include that matrix in the response but not in the paper.
+Given space limitations in the paper, we have opted not to include this information and show the readers the final results fdirectly.
+
+The observed and perceived variables are at two different scales. They can't be correlated unless we aggregate the perceived cocommunity variables at the community level, which is not the goal of the paper, because our goal is to test similar hypotheses at the individual and community level ...
+
+conclusion: maybe say more about 
+
+Interpretation of findings based on the sacel at what it was done.
+
+We found some parallels but also some differences in terms of the results.
+
+We need more multidimensional built enviornment research and this paper relied on very parsimonious models, but it points to the fact taht there are many facets of the environment and we need to have a better understanding about how the multiple dimensions work together to produce health and how they interact.
+KEYWORKDS: MULTIDIMENSIONAL, INTERACTION.
+
+The notion of SCALE is also important, because it really affects the interpretation of how environment affect. (basically, that the results differ in both studies).
+
+Take this work, but elevate to a higher theoretical conceptual level. What is the significance of this work in the context of the advances in the field?
+

@@ -28,7 +28,11 @@ d3.json("../data/environmentRatings.json", d3.autoType).then(raw_data => {
 /* INITIALIZING FUNCTION */
 // this will be run *one time* when the data finishes loading in
 function init() {
+  console.log('state', state)
   // + DEFINE SCALES
+const xScale = d3.scaleLinear()
+.domain(d3.extent(state.data, d=> d.ideologyScore2020))
+.range([])
 
   // + DEFINE AXES
 

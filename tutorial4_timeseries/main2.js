@@ -2,7 +2,9 @@
 const width = window.innerWidth * 0.7,
   height = window.innerHeight * 0.7,
   margin = { top: 20, bottom: 50, left: 60, right: 40 },
-  radius = 5;
+  radius = 5,
+  xZero = +margin.left + 50,
+  yZero = +height - margin.bottom;
 
 // these variables allow us to access anything we manipulate in init() but need access to in draw().
 // All these variables are empty before we assign something to them.
@@ -43,11 +45,13 @@ xScale = d3.scaleTime()
 
 yScale = d3.scaleLinear()
 .domain(d3.extent(state.data, d=> d.population))
+//.domain([0, d3.max(state.data, d => d.population)])
 .range([height-margin.bottom, margin.top])
 
   // + AXES
 const xAxis = d3.axisBottom(xScale)
 const yAxis = d3.axisLeft(yScale)
+
 
  // + CREATE SVG ELEMENT
 svg = d3.select("#d3-container")
@@ -57,7 +61,7 @@ svg = d3.select("#d3-container")
 
 svg.append("g")
 .attr("class", "xAxis")
-.attr("transform", `translate(${0}, ${height-margin.bottom})`)
+.attr("transform", `translate(${+50}, ${height-margin.bottom})`)
 .call(xAxis)
 .append("text")
 .text("Ideology Score 2020")
@@ -65,7 +69,7 @@ svg.append("g")
 
 svg.append("g")
 .attr("class", "yAxis")
-.attr("transform", `translate(${margin.left}, ${0})`)
+.attr("transform", `translate(${margin.left + 50}, ${0})`)
 .call(yAxis)
 
   // + UI ELEMENT SETUP
@@ -80,6 +84,7 @@ dropdown.selectAll("options")
 dropdown.on("change", event=> {
   console.log("dropdown changed!", event.target.value)
   state.selection = event.target.value
+  
   console.log("new state:", state)
   draw();
 })
@@ -87,7 +92,7 @@ dropdown.on("change", event=> {
 
   // + SET SELECT ELEMENT'S DEFAULT VALUE (optional)
 
- 
+  d3.selectAll("svg.circle")
 
   // + CALL AXES
 
@@ -122,11 +127,46 @@ console.log("filteredData", filteredData)
 
 svg.selectAll("path.line")
 .data([filteredData])
-.join("path")
+.join(enter => enter.append("path"))
 .attr("class","line")
 .attr("d", lineFunction)
 .attr("fill", "none")
 .attr("stroke", "black")
+.attr("transform", `translate(${+50}, ${0})`)
+
+svg.append("line")
+.style("stroke", "green")
+.style("stroke-width", 10)
+.attr("x1", 0)
+.attr("y1", 0)
+.attr("x2", 200)
+.attr("y2", 200)
+
+svg.selectAll("line.dynamic")
+.data([filteredData])
+.join(enter => enter.append("line"))
+.style("stroke", "blue")
+.style("stroke-width", 10)
+.attr("x1", yZero)
+.attr("y1", xZero)
+.attr("x2", margin.left, width - margin.right)
+.attr("y2", d3.max(state.data, d => d.population))
+
+//.call(enter => enter.transition(t)
+//.attr("y", 0)),
+//update => update
+//.attr("stroke", "green")
+//.attr("y", 0)
+//.call(update => update.transition(t)
+//.attr("x", (d, i) => i * 16)),
+//exit => exit
+//.attr("stroke", "brown")
+//.call(exit => exit.transition(t)
+//.attr("y", 30)
+//.remove())
+
+// yield svg.node();
+// await Promises.tick(2500);
 
 // SELECT_ALL
 //JOIN_DATA
